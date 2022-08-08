@@ -13,7 +13,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -33,7 +34,9 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     FormsModule,
     MatStepperModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

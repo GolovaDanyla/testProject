@@ -6,8 +6,8 @@
         <h1>Настройки</h1>
         <h3>НАЗВАНИЕ БАННЕРА</h3>
         <mat-form-field class="example-full-width" appearance="outline">
-          <mat-label>Favorite food</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="Sushi">
+          <mat-label></mat-label>
+          <input matInput placeholder=" " value="Banner1">
         </mat-form-field>
 
         <!-- <hr> -->
@@ -16,30 +16,30 @@
           <span>
             <div>
               <mat-form-field class="input-style" appearance="outline">
-                <mat-label>Choose a date</mat-label>
+                <mat-label style="color: white;">January 25, 2022</mat-label>
                 <input matInput [matDatepicker]="picker1">
-                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-hint></mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1>
                   <mat-datepicker-actions>
                     <div class="picker-buttons">
-                      <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                      <button mat-button matDatepickerCancel style="margin-left: 0;">Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply>Установить дату</button>
+                      <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
                     </div>
                   </mat-datepicker-actions>
                 </mat-datepicker>
               </mat-form-field>
 
               <mat-form-field class="input-style" appearance="outline">
-                <mat-label>Choose a date</mat-label>
+                <mat-label style="color: white;">January 25, 2022</mat-label>
                 <input matInput [matDatepicker]="picker2">
-                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-hint></mat-hint>
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2>
                   <mat-datepicker-actions>
                     <div class="picker-buttons">
-                      <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                      <button mat-button matDatepickerCancel style="margin-left: 0;">Cancel</button>
+                      <button mat-raised-button color="primary" matDatepickerApply>Установить дату</button>
+                      <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
                     </div>
                   </mat-datepicker-actions>
                 </mat-datepicker>
@@ -56,13 +56,13 @@
             <div>
 
               <mat-form-field class="input-style" appearance="outline">
-                <mat-label>Favorite food</mat-label>
-                <input matInput type="time" placeholder="Start Time" value="">
+                <mat-label></mat-label>
+                <input matInput type="time" placeholder=" " value="Время">
               </mat-form-field>
 
               <mat-form-field class="input-style" appearance="outline">
-                <mat-label>Favorite food</mat-label>
-                <input matInput type="time" placeholder="End Time" value="">
+                <mat-label></mat-label>
+                <input matInput type="time" placeholder=" " value="Время">
               </mat-form-field>
             </div>
             <div>
@@ -82,7 +82,10 @@
           <mat-checkbox color="primary" class="example-margin" [checked]="true">Вс</mat-checkbox>
         </div>
         <!-- style="margin: 50px 0px 10px 0px  ; font-size: 15px;" -->
-        <h3>ВЫБЕРИТЕ ГОРОД</h3>
+        <h3 style="display: flex; align-content: center; align-items: center;">
+          <span style="margin-right: 5px;font-size: 10px;">ВЫБЕРИТЕ ГОРОД</span>
+          <mat-icon style="font-size: 15px; height: 17px; width: 17px;">help_outline</mat-icon>
+        </h3>
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Выберите город</mat-label>
@@ -94,6 +97,7 @@
           </mat-form-field>
         </div>
       </mat-card>
+      <button mat-raised-button color="primary" style="float: right;width: 200px;margin-right: 1rem;">Продолжить</button>
 
     </div>
 
