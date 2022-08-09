@@ -7,68 +7,76 @@
         <h3>НАЗВАНИЕ БАННЕРА</h3>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label></mat-label>
-          <input matInput placeholder=" " value="Banner1">
+          <input matInput placeholder=" " [(ngModel)]="bannerName">
         </mat-form-field>
 
         <!-- <hr> -->
-        <div style="display: flex; justify-content: space-between;">
+        <div class="line-wrapper">
 
           <span>
-            <div>
-              <mat-form-field class="input-style" appearance="outline">
-                <mat-label style="color: white;">January 25, 2022</mat-label>
-                <input matInput [matDatepicker]="picker1">
-                <mat-hint></mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1>
-                  <mat-datepicker-actions>
-                    <div class="picker-buttons">
-                      <button mat-raised-button color="primary" matDatepickerApply>Установить дату</button>
-                      <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
-                    </div>
-                  </mat-datepicker-actions>
-                </mat-datepicker>
-              </mat-form-field>
 
-              <mat-form-field class="input-style" appearance="outline">
-                <mat-label style="color: white;">January 25, 2022</mat-label>
-                <input matInput [matDatepicker]="picker2">
-                <mat-hint></mat-hint>
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2>
-                  <mat-datepicker-actions>
-                    <div class="picker-buttons">
-                      <button mat-raised-button color="primary" matDatepickerApply>Установить дату</button>
-                      <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
-                    </div>
-                  </mat-datepicker-actions>
-                </mat-datepicker>
-              </mat-form-field>
-            </div>
-
-            <div>
+            <div class="title">ДАТА</div>
+            <mat-form-field class="input-style" appearance="outline">
+              <mat-label style="color: white;">January 25, 2022</mat-label>
+              <input matInput [matDatepicker]="picker1" [max]="dateEnd || 0">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1>
+                <mat-datepicker-actions>
+                  <div class="picker-buttons">
+                    <button mat-raised-button color="primary" (click)="onPicker1($event)" matDatepickerApply>Установить
+                      дату</button>
+                    <!-- <button mat-raised-button color="primary" matDatepickerApply>Установить дату</button> -->
+                    <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
+                  </div>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
+            
+            <div class="title">
               <mat-checkbox color="primary" class="example-margin">БЕССРОЧНЫЕ АКЦИИ</mat-checkbox>
             </div>
+          </span>
+          <span>
+            <div class="title">ДАТА</div>
+            <mat-form-field class="input-style" appearance="outline">
+              <mat-label style="color: white;">January 25, 2022</mat-label>
+              <input matInput [matDatepicker]="picker2" [min]="dateStart" [disabled]="!dateStart">
+              <mat-hint></mat-hint>
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2>
+                <mat-datepicker-actions>
+                  <div class="picker-buttons">
+                    <button mat-raised-button color="primary" (click)="onPicker2($event)" matDatepickerApply>Установить
+                      дату</button>
+                    <button mat-button matDatepickerCancel style="margin-left: 0;">Отменить</button>
+                  </div>
+                </mat-datepicker-actions>
+              </mat-datepicker>
+            </mat-form-field>
           </span>
 
           <span>
             <!-- type="time" -->
-            <div>
 
-              <mat-form-field class="input-style" appearance="outline">
-                <mat-label></mat-label>
-                <input matInput type="time" placeholder=" " value="Время">
-              </mat-form-field>
+            <div class="title">ВРЕМЯ</div>
 
-              <mat-form-field class="input-style" appearance="outline">
-                <mat-label></mat-label>
-                <input matInput type="time" placeholder=" " value="Время">
-              </mat-form-field>
-            </div>
-            <div>
-
+            <mat-form-field class="input-style" appearance="outline">
+              <mat-label></mat-label>
+              <input matInput type="time" placeholder=" " [(ngModel)]="timeStart">
+            </mat-form-field>
+            <div class="title">
               <mat-checkbox color="primary" class="example-margin">ВСЕ ВРЕМЯ</mat-checkbox>
             </div>
+          </span>
+          <span>
+            <div class="title">ВРЕМЯ</div>
+
+            <mat-form-field class="input-style" appearance="outline">
+              <mat-label></mat-label>
+              <input matInput type="time" placeholder=" " [(ngModel)]="timeEnd">
+            </mat-form-field>
+
+
           </span>
         </div>
         <h3>ДНИ</h3>
@@ -89,15 +97,16 @@
         <div>
           <mat-form-field appearance="outline">
             <mat-label>Выберите город</mat-label>
-            <mat-select [(ngModel)]="selectedValue" name="food">
-              <mat-option *ngFor="let food of foods" [value]="food">
-                {{food}}
+            <mat-select [(ngModel)]="selectedValue" name="city">
+              <mat-option *ngFor="let city of cities" [value]="city">
+                {{city}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
       </mat-card>
-      <button mat-raised-button color="primary" style="float: right;width: 200px;margin-right: 1rem;">Продолжить</button>
+      <button mat-raised-button color="primary" style="float: right;width: 200px;margin-right: 1rem;"
+        (click)="onGoForward()">Продолжить</button>
 
     </div>
 

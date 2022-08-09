@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -35,8 +36,9 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     MatStepperModule,
     MatButtonModule,
-    MatIconModule
-
+    MatIconModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
